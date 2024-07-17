@@ -2,9 +2,14 @@
 import { StyleSheet, FlatList, Text } from 'react-native';
 import React from 'react';
 
+import ExpenseItem from './ExpenseItem';
+
 // 132 added function to pass to renderItem
 function renderExpenseItem(itemData) {
-  return <Text>{itemData.item.description}</Text>;
+  // 134 commented
+  // return <Text>{itemData.item.description}</Text>
+  // 134 passing id, description, amount, date
+  return <ExpenseItem {...itemData.item} />;
 }
 
 export default function ExpensesList({ expenses }) {
@@ -14,6 +19,7 @@ export default function ExpensesList({ expenses }) {
       data={expenses}
       renderItem={renderExpenseItem}
       keyExtractor={(item) => item.id}
+      showsVerticalScrollIndicator={false}
     />
   );
 }
