@@ -41,9 +41,13 @@ const DUMMY_EXPENSES = [
 export default function ExpensesOutput({ expenses, expensesPeriod }) {
   return (
     <View>
-      {/* 130 passing props to ExpensesSummary for destructuring */}
+      {/* 
+      130 passing props to ExpensesSummary for destructuring 
+      131 passing DUMMY_EXPENSES to ExpensesSummary
+      132 passing DUMMY_EXPENSES to ExpensesList
+      */}
       <ExpensesSummary expenses={DUMMY_EXPENSES} periodName={expensesPeriod} />
-      <ExpensesList />
+      <ExpensesList expenses={DUMMY_EXPENSES} />
     </View>
   );
 }
