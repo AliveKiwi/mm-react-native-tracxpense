@@ -4,10 +4,12 @@ import { StyleSheet, View } from 'react-native';
 import ExpensesSummary from './ExpensesSummary';
 import ExpensesList from './ExpensesList';
 
-export default function ExpensesOutput({ expenses }) {
+// 130 added props expenses, expensesPeriod through destructuring
+export default function ExpensesOutput({ expenses, expensesPeriod }) {
   return (
     <View>
-      <ExpensesSummary />
+      {/* 130 passing props to ExpensesSummary for destructuring */}
+      <ExpensesSummary expenses={expenses} periodName={expensesPeriod} />
       <ExpensesList />
     </View>
   );
