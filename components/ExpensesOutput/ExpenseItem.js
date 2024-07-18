@@ -1,11 +1,19 @@
 // 134 created, called in ExpensesList
 import { Pressable, View, Text, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import { GlobalStyles } from '../../constants/styles';
 import { getFormattedDate } from '../../util/date';
 
 function ExpenseItem({ description, amount, date }) {
+  // 137 navigation hook
+  const navigation = useNavigation();
+
   // 136 added empty function expensePressHandler
-  function expensePressHandler() {}
+  function expensePressHandler() {
+    // 137 added navigation
+    navigation.navigate('ManageExpense');
+  }
 
   return (
     // 134 created markup and added styles
