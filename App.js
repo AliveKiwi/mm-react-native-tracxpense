@@ -16,7 +16,7 @@ const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 
 // 128 renders BottomTabs
-// 136 added added IconButton using headerRight
+// 136 added IconButton using headerRight
 // 137 passed function in screenOptions={({navigation})=>({})} that returns an {}
 function ExpensesOverview() {
   return (
