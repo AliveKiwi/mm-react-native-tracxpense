@@ -1,8 +1,9 @@
 // 127 created
-import { StyleSheet, Text, View } from 'react-native';
 import React, { useLayoutEffect } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { GlobalStyles } from '../constants/styles';
 import IconButton from '../components/UI/IconButton';
+import Button from '../components/UI/Button';
 
 export default function ManageExpenses({ route, navigation }) {
   // 139 added route
@@ -21,9 +22,24 @@ export default function ManageExpenses({ route, navigation }) {
   // 140 added deleteExpenseHandler
   function deleteExpenseHandler() {}
 
-  // 140 added View
+  // 141 added cancelHandler
+  function cancelHandler() {}
+
+  // 141 added cancelHandler
+  function confirmHandler() {}
+
+  // 140 added View, IconButton
+  // 141 added Cancel Button amd Update : Add Button
   return (
     <View style={styles.container}>
+      <View style={styles.buttons}>
+        <Button style={styles.button} mode="flat" onPress={cancelHandler}>
+          Cancel
+        </Button>
+        <Button style={styles.button} onPress={confirmHandler}>
+          {isEditing ? 'Update' : 'Add'}
+        </Button>
+      </View>
       {isEditing && (
         <View style={styles.deleteContainer}>
           <IconButton
@@ -39,11 +55,23 @@ export default function ManageExpenses({ route, navigation }) {
 }
 
 // 140 added container and deleteContainer styles
+// 140 deleteContainer is used to style the delete button
+// 141 buttons to make the buttons align in a row
+// 141 button is used to pass custom/specfic style to the button
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
     backgroundColor: GlobalStyles.colors.primary800,
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
+    minWidth: 120,
+    marginHorizontal: 8,
   },
   deleteContainer: {
     marginTop: 16,
