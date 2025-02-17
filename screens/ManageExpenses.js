@@ -20,13 +20,22 @@ export default function ManageExpenses({ route, navigation }) {
   }, [navigation, isEditing]);
 
   // 140 added deleteExpenseHandler
-  function deleteExpenseHandler() {}
+  // 142 added goBack to close the modal
+  function deleteExpenseHandler() {
+    navigation.goBack();
+  }
 
   // 141 added cancelHandler
-  function cancelHandler() {}
+  // 142 added goBack to close the modal
+  function cancelHandler() {
+    navigation.goBack();
+  }
 
   // 141 added cancelHandler
-  function confirmHandler() {}
+  // 142 added goBack to close the modal
+  function confirmHandler() {
+    navigation.goBack();
+  }
 
   // 140 added View, IconButton
   // 141 added Cancel Button amd Update : Add Button
